@@ -1,0 +1,35 @@
+<div class="form">
+
+            <form class="example-form" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+
+                <h2>Add Employee Data</h2>
+
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput placeholder="Ex. Bhargav Patel" name="name" [(ngModel)]="employeeService.selectedEmployee.name" required>
+                <mat-error>Name is <strong>required</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Position</mat-label>
+                    <input type="text" matInput placeholder="Ex. Software Engineer" name="position" [(ngModel)]="employeeService.selectedEmployee.position" required>
+                    <mat-error>Position is <strong>required</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Office</mat-label>
+                    <input type="text" matInput placeholder="Ex. Corporate House" name="office" [(ngModel)]="employeeService.selectedEmployee.office" required>
+                    <mat-error>Office is <strong>required</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Salary</mat-label>
+                    <input type="text" matInput placeholder="Ex. 35000" name="salary" [(ngModel)]="employeeService.selectedEmployee.salary" required>
+                    <mat-error>Salary is <strong>required</strong></mat-error>
+                </mat-form-field>
+
+                <button type="submit" mat-raised-button color="primary" [disabled]="!employeeForm.valid">Submit</button>
+            </form>
+        </div>
